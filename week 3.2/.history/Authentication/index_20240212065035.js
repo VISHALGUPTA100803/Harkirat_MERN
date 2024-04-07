@@ -58,7 +58,7 @@ app.post("/signin", function (req, res) {
     });
   }
   // sign is from jwt libarary
-  // jwt.sign method is used for creating a new JWT
+  
   var token = jwt.sign({ username: username }, jwtPassword);
   return res.json({
     token,
@@ -69,7 +69,7 @@ app.get("/users", function (req, res) {
   const token = req.headers.authorization;
   try {
     // verify is from jwt libarary
-    // To verify a JWT, you should use jwt.verify 
+    //
     const decoded = jwt.verify(token, jwtPassword);
     const username = decoded.username;
     // return a list of users other than this username

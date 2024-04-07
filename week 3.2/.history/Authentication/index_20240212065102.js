@@ -69,7 +69,7 @@ app.get("/users", function (req, res) {
   const token = req.headers.authorization;
   try {
     // verify is from jwt libarary
-    // To verify a JWT, you should use jwt.verify 
+    //
     const decoded = jwt.verify(token, jwtPassword);
     const username = decoded.username;
     // return a list of users other than this username
